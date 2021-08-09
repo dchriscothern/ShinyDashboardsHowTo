@@ -1,13 +1,6 @@
-Version: 1.0
+library(shiny)
+ui <_ fluidPage()
 
-RestoreWorkspace: Default
-SaveWorkspace: Default
-AlwaysSaveHistory: Default
+server <- function(input, output) {}
 
-EnableCodeIndexing: Yes
-UseSpacesForTab: Yes
-NumSpacesForTab: 2
-Encoding: UTF-8
-
-RnwWeave: Sweave
-LaTeX: pdfLaTeX
+shinyApp(ui = ui, server = server)
