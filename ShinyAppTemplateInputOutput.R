@@ -1,11 +1,17 @@
 library(shiny)
 ui <- fluidPage(sliderInput(inputId = "num",
           label = "Choose a number",
-          value = 25, min = 1, max = 100)
+          value = 25, min = 1, max = 100),
+          plotOutput("hist")
 )
-server<- function(input, output) {}
+server<- function(input, output) {
+  output$hist <- renderPlot({
+    hist(rnorm(input$num))
+    
+  })
+}
 
 shinyApp(ui = ui, server = server)
 
-# Original template to start all shiny apps, from Shiny R studio
-# https://shiny.rstudio.com/tutorial/ 
+
+#server function to assemble inputs into outputs
